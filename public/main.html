@@ -8,44 +8,72 @@
     <title>Priyanka's Portfolio</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
     <header>
         <nav>
-            <h1>Priyanka | Data Analyst & AI/ML Engineer</h1>
+            <h1>Priyanka | Portfolio</h1>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
+                <!-- <li><a href="#education">Education</a></li> -->
                 <li><a href="#Certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <hr>
+    
     <section id="intro" class="intro-section">
-        <div class="container">
-            <h1>Hello!<br> I'm Priyanka<br> Data Analyst</h1>
-        
-          <a href="assets/resume.pdf.pdf" class="resume-btn" target="_blank">Resume</a>
+        <!-- <div class="container">
+            <h1>Hello!<br> I'm Priyanka<br> Data Analyst</h1> -->
+            <div class="container">
+                <h1>
+                    <span class="line line1">Hello!</span><br>
+                    <span class="line line2">
+                        <span class="word">I'm</span>
+                        <span class="word">Priyanka,</span>
+                        <span class="word">a</span>
+                        <span class="word">Data</span>
+                        <span class="word">Analyst</span>
+                        <span class="word">and</span>
+                        <span class="word">Web</span>
+                        <span class="word">Developer</span>
+                    </span>
+                    
+                    <!-- <span class="line line3">Data Analyst</span> -->
+                </h1>
+            <a href="assets/resume.pdf" class="resume-btn" target="_blank">Resume</a>
+            <!-- <a href="#" class="resume-btn">Resume</a> -->
         </div>
         <div class="intro-image">
             <img src="assets/Analytics_amp_Data_Science.gif" alt="data analyst ">
         </div>
     </section>
-    <hr>
+    
     
 
     <section id="about-section">
-        <h2>About Me</h2>
-        <p>
-            I am a 4th-year Computer Science and Engineering student with a focus on Data Analyst and AI/ML.<br> I have worked on some interesting projects involving machine learning, data analysis, and artificial intelligence. My strengths lie in analyzing data, building predictive models, and developing AI solutions.
-        </p>
+        <div class="about">
+        <div class="about-head">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-para">
+            <p >
+                I am a 4th-year Computer Science and Engineering student with a focus on Web Developing, Data Analysis, and AI/ML.
+                I have worked on some interesting projects involving machine learning, data analysis, and artificial intelligence. 
+                My strengths lie in analyzing data, building predictive models, and developing AI solutions.
+            </p>
+        </div>
+        </div>
+
     </section>
-    <hr>
+    
+
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects-container">
@@ -79,12 +107,12 @@
           
         </div>
       </div>
-      <hr>
+<!--    
     <section id="education">
         <h2>Education</h2>
         <p>A Computer Science and Engineeringn student in Poojya Doddappa Appa College of Engineering, Kalburagi. </p>
-    </section>
-    <hr>
+    </section> -->
+
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-container">
@@ -125,7 +153,6 @@
             
         </div>
     </section>
-    <hr>
     <section id="certificates">
         <h2>Certificates</h2>
         <div class="certificates-container">
@@ -148,20 +175,27 @@
             </div>
         </div>
     </section>
-    <hr>
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>Feel free to reach out to discuss projects or opportunities.</p>
+    
         <ul class="contact-info">
-            <li>Email: <a href="mailto:priyanka@example.com">priyanka@example.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/priyanka-karoor-55497a261/" target="_blank">https://www.linkedin.com/in/priyanka-karoor-55497a261/</a></li>
-            <li>GitHub: <a href="https://github.com/Priyankakaroor" target="_blank">https://github.com/Priyankaka</a></li>
+            <li>
+                <i class="fas fa-envelope"></i> 
+               <a href="mailto:priyanka@example.com">   Email</a>
+            </li>
+            <li>
+                <i class="fab fa-linkedin"></i> 
+             <a href="https://www.linkedin.com/in/priyanka-karoor-55497a261/" target="_blank">  LinkedIn</a>
+            </li>
+            <li>
+                <i class="fab fa-github"></i> 
+           <a href="https://github.com/Priyankakaroor" target="_blank">    GitHub </a>
+            </li>
         </ul>
     </section>
-
     
-   
+
 <div id="popup-modal" class="popup-modal">
     <div class="popup-content">
         <span class="close" onclick="closePopup()">&times;</span>
@@ -174,45 +208,45 @@
         </div>
     </div>
 </div>
-<hr>
 <section id="user-registration" class="user-registration-section">
     <div class="container">
-        <h2 class="form-heading">Contact Details</h2>
+        <h2 class="form-heading">Contact Form</h2>
         
-        <form action="/submit" method="POST" class="user-form">
+        <form action="#" th:action="@{/saveUser}" th:object="${user}" method="post" class="user-form">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name"  class="form-input" required>
+                <input type="text" id="name" name="name" th:field="*{name}" class="form-input" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email"  class="form-input" required>
+                <input type="email" id="email" name="email" th:field="*{email}" class="form-input" required>
             </div>
 
             <div class="form-group">
-                <label for="contactInfo">Contact No.:</label>
-                <input type="text" id="contactInfo" name="contactInfo"  class="form-input" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-              
-                <input type="text" id="message" name="message"  class="form-input" required>  
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" name="contactInfo" th:field="*{contactInfo}" class="form-input" required>
             </div>
 
             <div class="form-group">
                 <input type="submit" value="Submit" class="form-submit-btn">
             </div>
 
-           
+            <div th:if="${param.success}" class="form-success">
+                <p>User successfully registered!</p>
+            </div>
         </form>
     </div>
 </section>
 
+
 <footer>
     <p>© 2024 Priyanka | Data Scientist & AI/ML Engineer</p>
 </footer>
- <script src="script1.js"></script>
+
+
+    
+    <script src="script1.js"></script>
 </body>
 
 </html>
